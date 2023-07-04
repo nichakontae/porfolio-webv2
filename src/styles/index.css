@@ -1,0 +1,7 @@
+body {
+    @font-face {
+        font-family: "Gilmer";
+        src: url("../assets/fonts/gilmer-regular.otf") format("opentype");
+      }
+      
+}
