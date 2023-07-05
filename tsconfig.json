@@ -21,6 +21,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "main.tsx"],
+  "include": ["src", "main.tsx","emotion.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
