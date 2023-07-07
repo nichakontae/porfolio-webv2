@@ -1,25 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import AppRouter from "./router";
-import { darkMode, lightMode } from "./theme/theme";
-import { ThemeProvider } from "@emotion/react";
+import { getDesignTokens } from "./theme/theme";
+import ThemeProvider from "@mui/material/styles/ThemeProvider";
+import { PaletteMode, createTheme, useMediaQuery } from "@mui/material";
 
 const App = () => {
-  const [theme, setTheme] = useState<String>("light");
-  let isDarkTheme: boolean = true;
-  const checkPreferColorScheme = () => {
-    const a = window.matchMedia("(prefers-color-scheme: dark)");
-    setTheme(a.matches ? "dark" : "light");
-    isDarkTheme = theme === "light";
-  };
+  const [mode, setMode] = useState<PaletteMode>("light");
+  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
   useEffect(() => {
-    checkPreferColorScheme();
-    console.log(theme);
-  }, [theme]);
+    setMode(prefersDarkMode ? "dark" : "light");
+  }, [mode]);
+
+  const theme = useMemo(
+    () => createTheme(getDesignTokens(mode)),
+    [prefersDarkMode]
+  );
 
   return (
     // <React.Fragment> used for grouping multiple elements without adding extra DOM nodes be like <>...</>
     <React.Fragment>
-      <ThemeProvider theme={isDarkTheme ? darkMode : lightMode}>
+      <ThemeProvider theme={theme}>
         <AppRouter />
       </ThemeProvider>
     </React.Fragment>
