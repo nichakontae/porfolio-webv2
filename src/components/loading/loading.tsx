@@ -1,20 +1,19 @@
-import { CircularProgress, Stack } from "@chakra-ui/react";
+import { CircularProgress, Stack, useTheme } from "@mui/material";
 
 const Loading = () => {
+  const theme = useTheme();
   return (
     <Stack
-      w={"100vw"}
-      h={"100vh"}
+      width={"100vw"}
+      height={"100vh"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={"darkMode.bg.main"}
-      opacity={"0.7"}
+      sx={{
+        opacity: "0.7",
+        backgroundColor: theme.palette.background[300],
+      }}
     >
-      <CircularProgress
-        isIndeterminate
-        color="lightMode.accent.main"
-        size={"5rem"}
-      />
+      <CircularProgress sx={{ color: theme.palette.primary.main }} />
     </Stack>
   );
 };
