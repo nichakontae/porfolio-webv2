@@ -1,13 +1,8 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo } from "react";
 import AppRouter from "./router";
 import { getDesignTokens } from "./theme/theme";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
-import {
-  CssBaseline,
-  PaletteMode,
-  createTheme,
-  useMediaQuery,
-} from "@mui/material";
+import { CssBaseline, createTheme, useMediaQuery } from "@mui/material";
 
 const App = () => {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");

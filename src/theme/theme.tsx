@@ -49,4 +49,7 @@ export const getDesignTokens = (mode: PaletteMode) => ({
           },
         }),
   },
+  // fontSize:{
+  //   display:
+  // }
 });

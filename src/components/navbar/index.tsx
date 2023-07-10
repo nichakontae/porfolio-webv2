@@ -13,18 +13,17 @@ import NavItem from "./NavItem";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { MenuIcon } from "../../resources/icons";
+import { NavbarItem } from "../../types/nav";
 
 const Navbar = () => {
   const theme = useTheme();
-  const navItems = navData;
+  const navItems: NavbarItem[] = navData;
   const [mobileOpen, setMobileOpen] = useState(false);
   const container = window.document.body;
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
-
-
 
   const drawer = (
     <Box
@@ -84,8 +83,9 @@ const Navbar = () => {
       <AppBar
         position="fixed"
         sx={{
-          backgroundColor: theme.palette.background.main,
+          backgroundColor: "transparent",
           borderBottom: `1px solid ${theme.palette.background[300]} `,
+          backdropFilter: "blur(24px)",
         }}
         elevation={0}
       >
