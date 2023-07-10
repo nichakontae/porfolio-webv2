@@ -1,6 +1,7 @@
-import { Typography, useTheme } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 import { FC } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import "../../styles/nav.css";
 
 export interface NavItemProps {
   to: string;
@@ -10,9 +11,28 @@ export interface NavItemProps {
 const NavItem: FC<NavItemProps> = ({ to, name }) => {
   const theme = useTheme();
   return (
-    <Link to={to} style={{ textDecoration: "none" }}>
-      <Typography color={`${theme.palette.text.main}`}>{name}</Typography>
-    </Link>
+    <NavLink
+      style={{ textDecoration: "none" }}
+      to={to}
+      className={({ isActive }) =>
+        isActive
+          ? theme.palette.mode == "light"
+            ? "active-light"
+            : "active-dark"
+          : theme.palette.mode == "light"
+          ? "nav-item-light"
+          : "nav-item-dark"
+      }
+    >
+      <Box
+        sx={{
+          fontWeight: "500",
+          padding: "0.5rem 1.25rem",
+        }}
+      >
+        {name}
+      </Box>
+    </NavLink>
   );
 };
 
