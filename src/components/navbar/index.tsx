@@ -45,7 +45,7 @@ const Navbar = () => {
         }}
       >
         <Box
-          sx={{ backgroundColor: theme.palette.background[200] }}
+          sx={{ backgroundColor: "#F5F5F5" }}
           padding={"0.5rem 1.5rem"}
           borderRadius={"5px"}
         >
@@ -120,16 +120,21 @@ const Navbar = () => {
         }}
         elevation={0}
       >
-        <Toolbar sx={{ justifyContent: "space-between", display: "flex" }}>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            color={theme.palette.text.main}
-            fontWeight={"bold"}
-          >
-            ivelse.com
-          </Typography>
+        <Toolbar>
+          <Box sx={{ flexGrow: 1 }}>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <Typography
+                variant="h6"
+                component="div"
+                sx={{ display: "block" }}
+                color={theme.palette.text.main}
+                fontWeight={"bold"}
+              >
+                ivelse.com
+              </Typography>
+            </Link>
+          </Box>
+
           <Box sx={{ display: { xs: "none", sm: "flex" } }}>
             {navItems.map((item) => (
               <NavItem to={item.path} name={item.name} key={item.name} />
@@ -140,20 +145,29 @@ const Navbar = () => {
             aria-label="open drawer"
             edge="end"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { xs: "flex", sm: "none" } }}
+            sx={{
+              mr: 2,
+              display: { xs: "flex", sm: "none" },
+              margin: "0.25rem",
+            }}
           >
-            <MenuIcon sx={{ color: theme.palette.text.main }} />
+            <MenuIcon
+              sx={{ color: theme.palette.text.main, fontSize: "2.5rem" }}
+            />
           </IconButton>
         </Toolbar>
       </AppBar>
       <Box component="nav">
         <Drawer
+          anchor="right"
           container={container}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
+            // Better open performance on mobile.
+            // anchor: "right",
           }}
           sx={{
             display: { xs: "block", sm: "none" },
