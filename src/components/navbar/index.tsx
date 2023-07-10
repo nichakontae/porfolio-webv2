@@ -10,15 +10,13 @@ import {
   useTheme,
 } from "@mui/material";
 import NavItem from "./NavItem";
-import MenuIcon from "@mui/icons-material/Menu";
-import { FC, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-// import { MenuIcon } from "../../resources/icons";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { MenuIcon } from "../../resources/icons";
 
 const Navbar = () => {
   const theme = useTheme();
   const navItems = navData;
-  const [click, setClick] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const container = window.document.body;
 
@@ -26,7 +24,8 @@ const Navbar = () => {
     setMobileOpen((prevState) => !prevState);
   };
 
-  // const handleClick = () => setClick(!click);
+
+
   const drawer = (
     <Box
       onClick={handleDrawerToggle}
@@ -81,36 +80,6 @@ const Navbar = () => {
   );
 
   return (
-    // <Box
-    //   height={"60px"}
-    //   width={"100vw"}
-    //   borderBottom={`1px solid ${theme.palette.accent?.[200]}`}
-    //   padding={`0.5rem calc((100vw - 1400px) / 2)`}
-    //   position={"fixed"}
-    //   sx={{ backgroundColor: "transparent" }}
-    // >
-    //   <Stack
-    //     direction="row"
-    //     height={"100%"}
-    //     alignItems={"center"}
-    //     justifyContent={"space-between"}
-    //   >
-    //     <Box>
-    //       <Typography color={`${theme.palette.text.main}`}>Logo</Typography>
-    //     </Box>
-    //     <Box>
-    //       <Stack direction={"row"}>
-    //         {nav_data.map((e) => (
-    //           <NavItem to={e.path} name={e.name} />
-    //         ))}
-
-    //         <MenuIcon
-    //           style={{ color: theme.palette.text.main, fontSize: "2rem" }}
-    //         />
-    //       </Stack>
-    //     </Box>
-    //   </Stack>
-    // </Box>
     <>
       <AppBar
         position="fixed"
@@ -152,7 +121,7 @@ const Navbar = () => {
             }}
           >
             <MenuIcon
-              sx={{ color: theme.palette.text.main, fontSize: "2.5rem" }}
+              style={{ color: theme.palette.text.main, fontSize: "2.5rem" }}
             />
           </IconButton>
         </Toolbar>
