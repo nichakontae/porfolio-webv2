@@ -1,10 +1,9 @@
-
+import ProjectSection from "./ProjectSection";
 
 const Home = () => {
   return (
     <>
-
-      <div>Home</div>
+      <ProjectSection />
     </>
   );
 };
