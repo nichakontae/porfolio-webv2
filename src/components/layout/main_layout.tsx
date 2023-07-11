@@ -6,6 +6,7 @@ import { Container } from "@mui/material";
 import { IntroEachPage } from "../../resources/intro_each_page";
 import { IntroEachPageType } from "../../types/intro";
 import Intro from "../utils/intro";
+import Footer from "../utils/Footer";
 
 const MainLayout = () => {
   const introData: IntroEachPageType[] = IntroEachPage;
@@ -23,6 +24,7 @@ const MainLayout = () => {
         <Suspense fallback={<Loading />}>
           <Outlet />
         </Suspense>
+        <Footer />
       </Container>
     </>
   );
