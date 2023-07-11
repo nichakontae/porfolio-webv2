@@ -1,9 +1,12 @@
-import React from 'react'
+import WavyLine from "../utils/WavyLine";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <>
+      <WavyLine />
+      <div>Home</div>
+    </>
+  );
+};
 
-export default Home
+export default Home;

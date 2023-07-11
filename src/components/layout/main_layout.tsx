@@ -5,7 +5,7 @@ import Navbar from "../navbar";
 import { Container } from "@mui/material";
 import { IntroEachPage } from "../../resources/intro_each_page";
 import { IntroEachPageType } from "../../types/intro";
-import Intro from "./intro";
+import Intro from "../utils/intro";
 
 const MainLayout = () => {
   const introData: IntroEachPageType[] = IntroEachPage;

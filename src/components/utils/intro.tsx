@@ -11,7 +11,7 @@ export interface IntroProps {
 const Intro: FC<IntroProps> = ({ data }) => {
   const theme = useTheme();
   return (
-    <Stack height={"100vh"}>
+    <Stack marginBottom={data.path == "/home" ? "2rem" : "4rem"}>
       <Avatar src={data.image} sx={{ width: "5rem", height: "5rem" }} />
       {data.path == "/home" && (
         <Typography variant="subtitle1" marginTop={"1rem"}>
@@ -61,6 +61,7 @@ const Intro: FC<IntroProps> = ({ data }) => {
               padding: "0.8rem 1.5rem",
               borderRadius: "3rem",
               border: `1px solid ${theme.palette.accent?.[200]}`,
+              cursor: "pointer",
               ":hover": {
                 backgroundColor: theme.palette.background[300],
               },

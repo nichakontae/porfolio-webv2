@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import WavyLine from "../utils/WavyLine";
 
 const Projects = () => {
   return (
-    <div>Projects</div>
-  )
-}
+    <>
+      <WavyLine />
+      <div>Projects</div>
+    </>
+  );
+};
 
-export default Projects
+export default Projects;
