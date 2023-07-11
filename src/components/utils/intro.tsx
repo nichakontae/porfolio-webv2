@@ -50,7 +50,7 @@ const Intro: FC<IntroProps> = ({ data }) => {
             {data.contact
               ?.filter((e) => e.platform != "Email")
               .map((item) => (
-                <Link to={item.url} target="_blank">
+                <Link to={item.url} target="_blank" key={item.platform}>
                   <ContactIcon Icon={item.icon} />
                 </Link>
               ))}

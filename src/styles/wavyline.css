@@ -5,6 +5,8 @@
   --accent-light-200: #4d5a75;
 }
 
+
+/* don't forgot to put media query on content */
 .wavy-dark {
   position: relative;
   width: 100%;

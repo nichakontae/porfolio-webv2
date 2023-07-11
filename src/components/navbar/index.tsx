@@ -62,12 +62,11 @@ const Navbar = () => {
         sx={{ height: `calc(100% - 10rem)` }}
       >
         {navItems.map((item, index) => (
-          <Link to={item.path} style={{ textDecoration: "none" }}>
+          <Link to={item.path} style={{ textDecoration: "none" }} key={index}>
             <Typography
               fontWeight={"bold"}
               color={theme.palette.primary[300]}
               fontSize={"2rem"}
-              key={index}
               padding={"1rem"}
             >
               {item.name}

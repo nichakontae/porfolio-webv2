@@ -1,4 +1,4 @@
-import React from "react";
+
 import WavyLine from "../utils/WavyLine";
 
 const Projects = () => {
