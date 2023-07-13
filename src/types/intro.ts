@@ -11,6 +11,7 @@ export type IntroEachPageType = {
   image: string;
   smallTopic?: string;
   topic: string;
+  topic2?: string;
   desc: string;
   contact?: Contact[];
 };

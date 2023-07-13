@@ -3,6 +3,7 @@ import { FC } from "react";
 import ContactIcon from "./ContactIcon";
 import { IntroEachPageType } from "../../types/intro";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 export interface IntroProps {
   data: IntroEachPageType;
@@ -11,28 +12,75 @@ export interface IntroProps {
 const Intro: FC<IntroProps> = ({ data }) => {
   const theme = useTheme();
   return (
-    <Stack 
-    marginBottom={data.path == "/home" ? "2rem" : "4rem"}
-    >
+    <Stack marginBottom={data.path == "/home" ? "2rem" : "4rem"}>
       <Avatar src={data.image} sx={{ width: "5rem", height: "5rem" }} />
       {data.path == "/home" && (
         <Typography variant="subtitle1" marginTop={"1rem"}>
           {data.smallTopic}
         </Typography>
       )}
-      <Typography
-        variant="h3"
-        fontWeight={900}
-        paddingBottom={"1.5rem"}
-        paddingTop={data.path == "/home" ? "0rem" : "0.8rem"}
-        sx={{
-          background: `linear-gradient(90deg, ${theme.palette.primary.main} 0%, ${theme.palette.accent?.main} 20%)`,
-          WebkitBackgroundClip: "text",
-          color: "transparent",
-        }}
-      >
-        {data.topic}
-      </Typography>
+      {data.path == "/home" && (
+        <Stack>
+          <HashLink to="#project" smooth style={{ textDecoration: "none" }}>
+            <Typography
+              variant="h3"
+              fontWeight={900}
+              paddingTop={data.path == "/home" ? "0rem" : "0.8rem"}
+              sx={{
+                background: `linear-gradient(90deg, ${theme.palette.primary.main} 0%, ${theme.palette.accent?.main} 20%)`,
+                WebkitBackgroundClip: "text",
+                color: "transparent",
+                ":hover": {
+                  background: `linear-gradient(90deg, ${theme.palette.accent?.[200]} 0%, ${theme.palette.primary[200]} 20%)`,
+                  WebkitBackgroundClip: "text",
+                  color: "transparent",
+                },
+              }}
+            >
+              {data.topic}&
+            </Typography>
+          </HashLink>
+          <HashLink to="#photo" smooth style={{ textDecoration: "none" }}>
+            <Typography
+              variant="h3"
+              fontWeight={900}
+              paddingBottom={"1.5rem"}
+              paddingTop={data.path == "/home" ? "0rem" : "0.8rem"}
+              sx={{
+                background: `linear-gradient(90deg, ${theme.palette.primary.main} 0%, ${theme.palette.accent?.main} 20%)`,
+                WebkitBackgroundClip: "text",
+                color: "transparent",
+                ":hover": {
+                  background: `linear-gradient(90deg, ${theme.palette.accent?.[200]} 0%, ${theme.palette.primary[200]} 20%)`,
+                  WebkitBackgroundClip: "text",
+                  color: "transparent",
+                },
+              }}
+            >
+              {data.topic2}
+            </Typography>
+          </HashLink>
+        </Stack>
+      )}
+      {data.path != "/home" && (
+        <Typography
+          variant="h3"
+          fontWeight={900}
+          paddingBottom={"1.5rem"}
+          paddingTop={data.path == "/home" ? "0rem" : "0.8rem"}
+          sx={{
+            background: `linear-gradient(90deg, ${theme.palette.primary.main} 0%, ${theme.palette.accent?.main} 20%)`,
+            WebkitBackgroundClip: "text",
+            color: "transparent",
+          }}
+        >
+          {data.topic}
+        </Typography>
+      )}
+      {/* <HashLink to="#photo" smooth> */}
+
+      {/* </HashLink> */}
+
       <Typography variant="body1" fontWeight={300}>
         {data.desc}
       </Typography>

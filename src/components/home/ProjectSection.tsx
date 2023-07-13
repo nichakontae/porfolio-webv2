@@ -8,7 +8,7 @@ const ProjectSection = () => {
   // * Select last two item (recently project)
   const projects: ProjectSectionType[] = Projects.slice(-2);
   return (
-    <Box marginBottom={"4rem"}>
+    <div style={{ marginBottom: "4rem" }} id="project">
       <Heading
         topic="Full-stack software developer."
         head="Featured Projects"
@@ -19,7 +19,7 @@ const ProjectSection = () => {
           <ProjectCard data={item} />
         </Box>
       ))}
-    </Box>
+    </div>
   );
 };
 

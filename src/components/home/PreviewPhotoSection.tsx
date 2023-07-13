@@ -6,7 +6,7 @@ import { PreviewPhotoType } from "../../types/home";
 const PreviewPhotoSection = () => {
   const data: PreviewPhotoType[] = PreviewPhoto;
   return (
-    <>
+    <div id="photo">
       <Heading
         topic="Photographer."
         head="Interesting Photographs"
@@ -22,7 +22,7 @@ const PreviewPhotoSection = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
