@@ -35,6 +35,9 @@ const ProjectCard: FC<ProjectSectionProps> = ({ data }) => {
           flexGrow: 1,
           backgroundColor: theme.palette.background[200],
           borderRadius: "5px",
+          ":hover": {
+            backgroundColor: theme.palette.background[300],
+          },
         }}
       >
         <Grid container spacing={2}>
