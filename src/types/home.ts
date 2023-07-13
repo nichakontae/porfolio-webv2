@@ -3,3 +3,8 @@ export type ProjectSectionType = {
   projectName: string;
   desc: string;
 };
+
+export type PreviewPhotoType = {
+  image: string;
+  alt: string;
+};

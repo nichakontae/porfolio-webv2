@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import Loading from "../loading/loading";
+// import Loading from "../loading/loading";
 import Navbar from "../navbar";
 import { Container } from "@mui/material";
 import { IntroEachPage } from "../../resources/intro_each_page";
@@ -21,7 +21,7 @@ const MainLayout = () => {
       <Navbar />
       <Container sx={{ paddingTop: "10rem" }} maxWidth="md">
         <Intro data={filteredItem[0]} />
-        <Suspense fallback={<Loading />}>
+        <Suspense fallback={<></>}>
           <Outlet />
         </Suspense>
         <Footer />

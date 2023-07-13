@@ -10,6 +10,7 @@ const Loading = () => {
       alignItems={"center"}
       sx={{
         opacity: "0.7",
+        zIndex: 100,
         backgroundColor: theme.palette.background[300],
       }}
     >

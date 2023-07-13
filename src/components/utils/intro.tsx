@@ -11,7 +11,9 @@ export interface IntroProps {
 const Intro: FC<IntroProps> = ({ data }) => {
   const theme = useTheme();
   return (
-    <Stack marginBottom={data.path == "/home" ? "2rem" : "4rem"}>
+    <Stack 
+    marginBottom={data.path == "/home" ? "2rem" : "4rem"}
+    >
       <Avatar src={data.image} sx={{ width: "5rem", height: "5rem" }} />
       {data.path == "/home" && (
         <Typography variant="subtitle1" marginTop={"1rem"}>
