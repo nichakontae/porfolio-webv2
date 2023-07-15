@@ -1,5 +1,7 @@
+import { ProjectSectionType } from "../types/home";
+
 // เขียนเรียงโปรเจคแรกสุด อยู่แรกสุด อันล่าสุดควรอยู่หลังสุด
-export const Projects = [
+export const Projects: ProjectSectionType[] = [
   {
     image: "src/assets/images/profile.jpg",
     projectName: "Modlife",

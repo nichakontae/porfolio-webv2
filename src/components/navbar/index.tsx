@@ -13,14 +13,11 @@ import NavItem from "./NavItem";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { MenuIcon } from "../../resources/icons";
-import { NavbarItem } from "../../types/nav";
 
 const Navbar = () => {
   const theme = useTheme();
-  const navItems: NavbarItem[] = navData;
   const [mobileOpen, setMobileOpen] = useState(false);
   const container = window.document.body;
-
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
@@ -61,7 +58,7 @@ const Navbar = () => {
         alignItems={"center"}
         sx={{ height: `calc(100% - 10rem)` }}
       >
-        {navItems.map((item, index) => (
+        {navData.map((item, index) => (
           <Link to={item.path} style={{ textDecoration: "none" }} key={index}>
             <Typography
               fontWeight={"bold"}
@@ -104,7 +101,7 @@ const Navbar = () => {
           </Box>
 
           <Box sx={{ display: { xs: "none", sm: "flex" } }}>
-            {navItems.map((item) => (
+            {navData.map((item) => (
               <NavItem to={item.path} name={item.name} key={item.name} />
             ))}
           </Box>

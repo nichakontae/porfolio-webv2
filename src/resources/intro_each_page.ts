@@ -1,11 +1,12 @@
 import { GitHubIcon, LinkedInIcon, MessengerIcon } from "../resources/icons";
-export const IntroEachPage = [
+import { IntroEachPageType } from "../types/intro";
+export const IntroEachPage: IntroEachPageType[] = [
   {
     path: "/home",
     image: "src/assets/images/profile.jpg",
     smallTopic: "Hi, I’m Eve 👋",
     topic: "Full-stack software developer",
-    topic2:"Photographer",
+    topic2: "Photographer",
     desc: "Welcome to my web portfolio! I'm a 20-year-old computer science student who is passionate about web programming, and photography. Here, I showcase my abilities and projects that reflect my interests. I like developing user-friendly websites, and capturing captivating moments through photography. Join me on this journey as I showcase my work and share my excitement for these fascinating topics. Let's connect and work on future projects together!",
     contact: [
       {
