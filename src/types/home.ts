@@ -1,7 +1,10 @@
 export type ProjectSectionType = {
-  image: string;
+  icon: string;
   projectName: string;
+  preview: string;
   desc: string;
+  websiteName?: string;
+  link?: string;
 };
 
 export type PreviewPhotoType = {

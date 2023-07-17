@@ -1,7 +1,8 @@
 import { Box } from "@mui/material";
-import ProjectCard from "./ProjectCard";
-import { Projects } from "../../resources/project";
+
+import { projects } from "../../resources/project";
 import Heading from "./Heading";
+import SmallProjectCard from "./ProjectCard";
 
 const ProjectSection = () => {
   return (
@@ -11,9 +12,9 @@ const ProjectSection = () => {
         head="Featured Projects"
         desc="A collection of some side projects that have shipped recently."
       />
-      {Projects.slice(-2).map((item) => (
+      {projects.slice(-2).map((item) => (
         <Box mb={"1rem"}>
-          <ProjectCard data={item} />
+          <SmallProjectCard data={item} />
         </Box>
       ))}
     </div>

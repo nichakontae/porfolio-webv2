@@ -14,7 +14,7 @@ interface ProjectSectionProps {
   data: ProjectSectionType;
 }
 
-const ProjectCard: FC<ProjectSectionProps> = ({ data }) => {
+const SmallProjectCard: FC<ProjectSectionProps> = ({ data }) => {
   const theme = useTheme();
   const Img = styled("img")({
     margin: "auto",
@@ -43,7 +43,7 @@ const ProjectCard: FC<ProjectSectionProps> = ({ data }) => {
         <Grid container spacing={2}>
           <Grid item>
             <ButtonBase sx={{ width: 135, height: 135 }}>
-              <Img alt="complex" src={data.image} />
+              <Img alt="complex" src={data.icon} />
             </ButtonBase>
           </Grid>
           <Grid item xs={12} sm container>
@@ -69,4 +69,4 @@ const ProjectCard: FC<ProjectSectionProps> = ({ data }) => {
   );
 };
 
-export default ProjectCard;
+export default SmallProjectCard;
