@@ -12,8 +12,8 @@ const ProjectSection = () => {
         head="Featured Projects"
         desc="A collection of some side projects that have shipped recently."
       />
-      {projects.slice(-2).map((item) => (
-        <Box mb={"1rem"}>
+      {projects.slice(-2).map((item, i) => (
+        <Box mb={"1rem"} key={i}>
           <SmallProjectCard data={item} />
         </Box>
       ))}

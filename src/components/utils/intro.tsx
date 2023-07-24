@@ -1,5 +1,5 @@
 import { Avatar, Box, Stack, Typography, useTheme } from "@mui/material";
-import { FC, useState } from "react";
+import { FC } from "react";
 import ContactIcon from "./ContactIcon";
 import { IntroEachPageType } from "../../types/intro";
 import { Link } from "react-router-dom";

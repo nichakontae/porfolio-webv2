@@ -24,7 +24,7 @@ const SmallProjectCard: FC<ProjectSectionProps> = ({ data }) => {
   });
   return (
     <Link
-      to={"#"}
+      to={data.link!}
       style={{ textDecoration: "none", color: theme.palette.text.main }}
     >
       <Box

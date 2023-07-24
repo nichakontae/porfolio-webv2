@@ -18,7 +18,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ data }) => {
         borderRadius={"0.5rem"}
         overflow={"hidden"}
       >
-        <img src={data.preview} alt={data.projectName} />
+        <img src={data.preview} alt={data.projectName} width={"100%"}/>
       </Box>
       <Grid container spacing={3}>
         <Grid item xs={3} sm={2}>
@@ -27,6 +27,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ data }) => {
               src={data.icon}
               alt={data.projectName}
               style={{ borderRadius: "0.5rem" }}
+              width={"100%"}
             />
           </Box>
         </Grid>
