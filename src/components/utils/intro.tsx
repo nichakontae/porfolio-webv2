@@ -1,5 +1,5 @@
 import { Avatar, Box, Stack, Typography, useTheme } from "@mui/material";
-import { FC } from "react";
+import { FC, useState } from "react";
 import ContactIcon from "./ContactIcon";
 import { IntroEachPageType } from "../../types/intro";
 import { Link } from "react-router-dom";
@@ -11,6 +11,10 @@ export interface IntroProps {
 
 const Intro: FC<IntroProps> = ({ data }) => {
   const theme = useTheme();
+  const currentYear = new Date().getFullYear();
+  const currentAge = currentYear - 2003;
+  const updatedDesc = data.desc.replace(/20/g, currentAge.toString());
+
   return (
     <Stack marginBottom={data.path == "/home" ? "2rem" : "4rem"}>
       <Avatar src={data.image} sx={{ width: "5rem", height: "5rem" }} />
@@ -77,13 +81,16 @@ const Intro: FC<IntroProps> = ({ data }) => {
           {data.topic}
         </Typography>
       )}
-      {/* <HashLink to="#photo" smooth> */}
+      {data.path == "/home" || data.path == "/about" ? (
+        <Typography variant="body1" fontWeight={300}>
+          {updatedDesc}
+        </Typography>
+      ) : (
+        <Typography variant="body1" fontWeight={300}>
+          {data.desc}
+        </Typography>
+      )}
 
-      {/* </HashLink> */}
-
-      <Typography variant="body1" fontWeight={300}>
-        {data.desc}
-      </Typography>
       {data.path == "/home" && (
         <Stack
           direction={{ xs: "column", sm: "row" }}
