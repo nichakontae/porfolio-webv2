@@ -166,7 +166,8 @@ const About = () => {
                 position: "absolute",
                 paddingTop: "0.3rem",
                 top: scrollYPosition > 667 ? scrollYPosition : "",
-                left: "49.1%",
+                left: "50%",
+                transform: "translateX(-50%)",
               }}
             >
               <Box
