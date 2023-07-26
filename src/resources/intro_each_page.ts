@@ -17,7 +17,7 @@ export const IntroEachPage: IntroEachPageType[] = [
       {
         icon: LinkedInIcon,
         platform: "LinkedIn",
-        url: "#",
+        url: "https://linkedin.com/in/nichakon-seehabong-173790285",
       },
       {
         icon: GitHubIcon,
