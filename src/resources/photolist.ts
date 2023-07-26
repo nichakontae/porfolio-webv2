@@ -2,39 +2,83 @@ import { PhotoListType } from "../types/photo";
 
 export const PhotoList: PhotoListType[] = [
   {
-    img: "src/assets/images/test.jpg",
-    title: "me1",
+    id:1,
+    img: "src/assets/images/photos/01.jpg",
+    title: "my dog",
   },
   {
-    img: "src/assets/images/profile.jpg",
-    title: "me2",
+    id:2,
+    img: "src/assets/images/photos/02.jpg",
+    title: "my dog",
   },
   {
-    img: "src/assets/images/profile.jpg",
-    title: "me3",
+    id:3,
+    img: "src/assets/images/photos/03.jpg",
+    title: "cute doll",
   },
   {
-    img: "src/assets/images/test3.jpg",
-    title: "me4",
+    id:4,
+    img: "src/assets/images/photos/04.jpg",
+    title: "brainstorm board",
   },
   {
-    img: "src/assets/images/profile.jpg",
-    title: "me5",
+    id:5,
+    img: "src/assets/images/photos/06.jpg",
+    title: "chinese lantern",
   },
   {
-    img: "src/assets/images/test2.png",
-    title: "me6",
+    id:6,
+    img: "src/assets/images/photos/07.jpg",
+    title: "sunlight",
   },
   {
-    img: "src/assets/images/profile.jpg",
-    title: "me7",
+    id:7,
+    img: "src/assets/images/photos/08.jpg",
+    title: "entrance",
   },
   {
-    img: "src/assets/images/profile.jpg",
-    title: "me8",
+    id:8,
+    img: "src/assets/images/photos/09.jpg",
+    title: "exit",
   },
   {
-    img: "src/assets/images/profile.jpg",
-    title: "me9",
+    id:9,
+    img: "src/assets/images/photos/10.jpg",
+    title: "beautiful sea",
+  },
+  {
+    id:10,
+    img: "src/assets/images/photos/11.jpg",
+    title: "Lightroom program",
+  },
+  {
+    id:11,
+    img: "src/assets/images/photos/12.jpg",
+    title: "laptop with coding",
+  },
+  {
+    id:12,
+    img: "src/assets/images/photos/13.jpg",
+    title: "grass",
+  },
+  {
+    id:13,
+    img: "src/assets/images/photos/14.jpg",
+    title: "sunlight",
+  },
+  {
+    id:14,
+    img: "src/assets/images/photos/15.jpg",
+    title: "my first Cactus",
+  },
+  {
+    id:15,
+    img: "src/assets/images/photos/16.jpg",
+    title: "sky",
+  },
+  {
+    id:16,
+    img: "src/assets/images/photos/17.jpg",
+    title: "chinese door",
   },
 ];

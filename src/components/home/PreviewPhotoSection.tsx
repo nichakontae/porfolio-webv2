@@ -13,6 +13,7 @@ const PreviewPhotoSection = () => {
   const handleClose = () => setOpen(false);
 
   const onImgClick = (select: PhotoListType) => setSelectedImg(select);
+  const notPick = [5, 6, 7, 9, 12, 13];
 
   return (
     <div id="photo">
@@ -24,18 +25,20 @@ const PreviewPhotoSection = () => {
       {/* อย่าลืมเปลี่ยน logic ในการดึงภาพมาโชว์หน้า home  */}
       <div className="slider">
         <div className="slide-track">
-          {PhotoList.map((item, index) => (
-            <div className="slide" key={index}>
-              <img
-                src={item.img}
-                alt={item.title}
-                onClick={() => {
-                  onImgClick(item);
-                  handleOpen();
-                }}
-              />
-            </div>
-          ))}
+          {PhotoList.filter((el) => !notPick.includes(el.id)).map(
+            (item, index) => (
+              <div className="slide" key={index}>
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  onClick={() => {
+                    onImgClick(item);
+                    handleOpen();
+                  }}
+                />
+              </div>
+            )
+          )}
           <FullImg handleClose={handleClose} open={open} data={selectedImg} />
         </div>
       </div>
