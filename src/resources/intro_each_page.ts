@@ -26,7 +26,7 @@ export const IntroEachPage: IntroEachPageType[] = [
       },
       {
         platform: "Email",
-        url: "mailto:hello.eve555@gmail.com",
+        url: "mailto:nichakon.ivelse@gmail.com",
       },
     ],
   },

@@ -12,13 +12,13 @@ const ProjectCard: FC<ProjectCardProps> = ({ data }) => {
   const theme = useTheme();
   return (
     <Box marginBottom={"4rem"}>
-      <Box
-        width={"100%"}
-        marginBottom={"2rem"}
-        borderRadius={"0.5rem"}
-        overflow={"hidden"}
-      >
-        <img src={data.preview} alt={data.projectName} width={"100%"}/>
+      <Box width={"100%"} marginBottom={"2rem"}>
+        <img
+          src={data.preview}
+          alt={data.projectName}
+          width={"100%"}
+          style={{ borderRadius: "0.5rem" }}
+        />
       </Box>
       <Grid container spacing={3}>
         <Grid item xs={3} sm={2}>
@@ -41,21 +41,57 @@ const ProjectCard: FC<ProjectCardProps> = ({ data }) => {
               {data.projectName}
             </Typography>
             <Typography>{data.desc}</Typography>
-            {data.websiteName != undefined && (
+            <Stack direction={"row"} spacing={3}>
+              {data.websiteName != undefined && (
+                <Link
+                  to={data.link!}
+                  style={{
+                    textDecoration: "none",
+                    color: theme.palette.text.main,
+                  }}
+                >
+                  <Box display={"inline-block"}>
+                    <Stack
+                      direction={"row"}
+                      justifyContent={"space-between"}
+                      alignItems={"center"}
+                      sx={{
+                        backgroundColor: theme.palette.background[200],
+                        padding: "0.8rem 1.5rem",
+                        borderRadius: "3rem",
+                        border: `1px solid ${theme.palette.accent?.[200]}`,
+                        cursor: "pointer",
+                        ":hover": {
+                          backgroundColor: theme.palette.background[300],
+                        },
+                      }}
+                    >
+                      {data.websiteName!} &nbsp;
+                      <ArrowUpRightIcon />
+                    </Stack>
+                  </Box>
+                </Link>
+              )}
               <Link
-                to={data.link!}
+                to={data.code}
                 style={{
                   textDecoration: "none",
-                  color: theme.palette.text.main,
+                  color:
+                    data.websiteName != undefined
+                      ? theme.palette.primary.main
+                      : theme.palette.text.main,
                 }}
               >
-                <Box maxWidth={"13rem"}>
+                <Box display={"inline-block"}>
                   <Stack
                     direction={"row"}
                     justifyContent={"space-between"}
                     alignItems={"center"}
                     sx={{
-                      backgroundColor: theme.palette.background[200],
+                      backgroundColor:
+                        data.websiteName != undefined
+                          ? theme.palette.text[200]
+                          : theme.palette.background[200],
                       padding: "0.8rem 1.5rem",
                       borderRadius: "3rem",
                       border: `1px solid ${theme.palette.accent?.[200]}`,
@@ -65,12 +101,12 @@ const ProjectCard: FC<ProjectCardProps> = ({ data }) => {
                       },
                     }}
                   >
-                    {data.websiteName!}
+                    {data.code.replace(/^https?:\/\//, "")} &nbsp;
                     <ArrowUpRightIcon />
                   </Stack>
                 </Box>
               </Link>
-            )}
+            </Stack>
           </Stack>
         </Grid>
       </Grid>

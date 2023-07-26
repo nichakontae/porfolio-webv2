@@ -5,6 +5,7 @@ export type ProjectSectionType = {
   desc: string;
   websiteName?: string;
   link?: string;
+  code: string;
 };
 
 export type PreviewPhotoType = {
