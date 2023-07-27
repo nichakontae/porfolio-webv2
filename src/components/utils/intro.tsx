@@ -104,28 +104,37 @@ const Intro: FC<IntroProps> = ({ data }) => {
             justifyContent={"center"}
             alignItems={"center"}
           >
-            {data.contact
-              ?.filter((e) => e.platform != "Email")
-              .map((item) => (
-                <Link to={item.url} target="_blank" key={item.platform}>
+            {data.contact?.map((item) => (
+              <Link
+                to={item.url}
+                target="_blank"
+                key={item.platform}
+                style={{
+                  textDecoration: "none",
+                  color: theme.palette.text.main,
+                }}
+              >
+                {item.platform == "Email" ? (
+                  <Box
+                    sx={{
+                      backgroundColor: theme.palette.background[200],
+                      padding: "0.8rem 1.5rem",
+                      borderRadius: "3rem",
+                      border: `1px solid ${theme.palette.accent?.[200]}`,
+                      cursor: "pointer",
+                      ":hover": {
+                        backgroundColor: theme.palette.background[300],
+                      },
+                    }}
+                  >
+                    Email me!
+                  </Box>
+                ) : (
                   <ContactIcon Icon={item.icon} />
-                </Link>
-              ))}
+                )}
+              </Link>
+            ))}
           </Stack>
-          <Box
-            sx={{
-              backgroundColor: theme.palette.background[200],
-              padding: "0.8rem 1.5rem",
-              borderRadius: "3rem",
-              border: `1px solid ${theme.palette.accent?.[200]}`,
-              cursor: "pointer",
-              ":hover": {
-                backgroundColor: theme.palette.background[300],
-              },
-            }}
-          >
-            Email me!
-          </Box>
         </Stack>
       )}
     </Stack>

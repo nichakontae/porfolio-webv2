@@ -16,15 +16,16 @@ const ProjectSection = () => {
       />
       {projects.slice(-2).map((item, i) => (
         <Box mb={"1rem"} key={i}>
-          {item.link != undefined && (
+          {item.link != undefined ? (
             <Link
               to={item.link!}
               style={{ textDecoration: "none", color: theme.palette.text.main }}
             >
               <SmallProjectCard data={item} />
             </Link>
+          ) : (
+            <SmallProjectCard data={item} />
           )}
-          <SmallProjectCard data={item} />
         </Box>
       ))}
     </div>
