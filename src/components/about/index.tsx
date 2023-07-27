@@ -1,10 +1,12 @@
 import { Box, Stack, Typography } from "@mui/material";
 
 import WorkExperience from "./WorkExperience";
+import WavyLine from "../utils/WavyLine";
 
 const About = () => {
   return (
     <Box>
+      <WavyLine />
       <Stack width={"100%"} justifyContent={"center"} alignItems={"center"}>
         <Typography fontWeight={900} fontSize={"2rem"}>
           Work Experiences
