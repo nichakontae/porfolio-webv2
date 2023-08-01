@@ -55,4 +55,14 @@ export const projects: ProjectSectionType[] = [
     code: "https://github.com/nichakontae/porfolio-webv2",
     // don't forgot to change visibility to public
   },
+  {
+    icon: "src/assets/images/proj/ivelse-icon.png",
+    projectName: "Shorten URL",
+    preview: "src/assets/images/proj/shortUrl.png",
+    desc: "In July 2023, I developed a Shorten URL application, which allows users to create memorable and easy-to-share URLs. During this project, I gained knowledge about MongoDB and learned how to host a website with a proxy using Nginx.",
+    code: "https://github.com/nichakontae/url-shortner",
+    websiteName: "sh.ivelse.com",
+    link: "#",
+    // don't forgot to change visibility to public
+  },
 ];
