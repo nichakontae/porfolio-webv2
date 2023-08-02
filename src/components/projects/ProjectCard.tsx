@@ -80,7 +80,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ data }) => {
                   textDecoration: "none",
                   color:
                     data.websiteName != undefined
-                      ? theme.palette.primary.main
+                      ? theme.palette.background.main
                       : theme.palette.text.main,
                 }}
               >
