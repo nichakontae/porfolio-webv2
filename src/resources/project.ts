@@ -19,11 +19,11 @@ export const projects: ProjectSectionType[] = [
   {
     icon: "src/assets/images/proj/gdsc-icon.jpg",
     projectName: "GDSC gallery",
-    preview: "src/assets/images/test2.png",
+    preview: "src/assets/images/proj/gdsc-gallery.png",
     // waiting for weblink
     desc: "In January 2023, I had the opportunity to develop the GDSC Gallery website. The website showcases a vast collection of photos taken during various workshops organized by the Google Developer Student Clubs (GDSC) - KMUTT. The gallery serves as a visual representation of the enriching experiences and learning moments captured throughout these workshops.",
     websiteName: "gdsc.gallery.com",
-    link: "#",
+    link: "https://gdsc.sit.kmutt.ac.th/",
     code: "https://github.com/KNattawat89/gdsc-project",
   },
   {

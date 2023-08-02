@@ -45,6 +45,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ data }) => {
               {data.websiteName != undefined && (
                 <Link
                   to={data.link!}
+                  target="_blank"
                   style={{
                     textDecoration: "none",
                     color: theme.palette.text.main,
@@ -74,6 +75,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ data }) => {
               )}
               <Link
                 to={data.code}
+                target="_blank"
                 style={{
                   textDecoration: "none",
                   color:
