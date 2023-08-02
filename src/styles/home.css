@@ -1,0 +1,70 @@
+.slider {
+  height: 250px;
+  margin: auto;
+  position: relative;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.slide-track {
+  display: flex;
+  /* slide track = total number of slides(9*2)* individual slide width(250px) */
+  width: calc(250px * 9);
+  animation: scroll 50s linear infinite;
+}
+
+.slide-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* move slide track leftwards (-250px) by half (18 image/2) of its width */
+    transform: translateX(calc(-250px * 4.5));
+  }
+}
+
+.slide {
+  height: 200px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  /* to make image move on Z axis, we need to add to its container(.slide) a perspective */
+  perspective: 100px;
+}
+
+img {
+  width: 100%;
+  transition: transform 1s;
+}
+img:hover {
+  transform: translateZ(20px);
+}
+
+/* Gradient shadow */
+/* .slider::before,
+.slider::after {
+  background: linear-gradient(to right, #1e293a 0%, #4d648d 100%);
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 15%;
+  z-index: 2;
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+} */
