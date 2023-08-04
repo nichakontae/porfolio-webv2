@@ -1,6 +1,7 @@
 import { Box, Grid, Typography, useTheme, styled } from "@mui/material";
 import { FC } from "react";
 import { ProjectSectionType } from "../../types/home";
+import TechUse from "../projects/TechUse";
 
 interface ProjectSectionProps {
   data: ProjectSectionType;
@@ -45,9 +46,10 @@ const SmallProjectCard: FC<ProjectSectionProps> = ({ data }) => {
               >
                 {data.projectName}
               </Typography>
-              <Typography variant="body2" gutterBottom fontWeight={300}>
+              <Typography variant="body2" gutterBottom fontWeight={300} marginBottom={"1rem"}>
                 {data.desc}
               </Typography>
+              <TechUse techUse={data.techUse} type={data.type} />
             </Grid>
           </Grid>
         </Grid>
