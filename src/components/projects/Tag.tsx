@@ -11,10 +11,12 @@ const Tag: FC<TagProps> = ({ text }) => {
     <Box
       display={"inline-block"}
       sx={{
-        borderRadius: "3rem",
-        border: `1px solid ${theme.palette.accent?.[200]}`,
+        borderRadius: "5px",
         paddingX: "0.5rem",
-        backgroundColor: theme.palette.primary.main,
+        backgroundColor:
+          theme.palette.mode == "light"
+            ? theme.palette.primary.main
+            : theme.palette.text.main,
         color: theme.palette.background.main,
       }}
     >

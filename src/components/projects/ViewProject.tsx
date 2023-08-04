@@ -1,17 +1,19 @@
-import { Stack, useTheme, Box } from "@mui/material";
+import { Stack, useTheme, Box, useMediaQuery, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import { ArrowUpRightIcon } from "../../resources/icons";
+import { ArrowUpRightIcon, CodeIcon } from "../../resources/icons";
 import { ViewProjectType } from "../../types/home";
 import { FC } from "react";
+import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 
-interface ViewProjectProps{
-    data:ViewProjectType
+interface ViewProjectProps {
+  data: ViewProjectType;
 }
 
-const ViewProject:FC<ViewProjectProps> = ({data}) => {
+const ViewProject: FC<ViewProjectProps> = ({ data }) => {
   const theme = useTheme();
+  const isExtraSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   return (
-    <Stack direction={"row"} spacing={3}>
+    <Stack direction={"row"} spacing={2} flexWrap={"wrap"} useFlexGap>
       {data.websiteName != undefined && (
         <Link
           to={data.link!}
@@ -26,6 +28,7 @@ const ViewProject:FC<ViewProjectProps> = ({data}) => {
               direction={"row"}
               justifyContent={"space-between"}
               alignItems={"center"}
+              spacing={1}
               sx={{
                 backgroundColor: theme.palette.background[200],
                 padding: "0.8rem 1.5rem",
@@ -37,8 +40,17 @@ const ViewProject:FC<ViewProjectProps> = ({data}) => {
                 },
               }}
             >
-              {data.websiteName!} &nbsp;
-              <ArrowUpRightIcon />
+              {isExtraSmallScreen ? (
+                <>
+                  <Typography>View</Typography>
+                  <VisibilityOutlinedIcon />
+                </>
+              ) : (
+                <>
+                  {data.websiteName && <>{data.websiteName}&nbsp;</>}
+                  <ArrowUpRightIcon />
+                </>
+              )}
             </Stack>
           </Box>
         </Link>
@@ -59,6 +71,7 @@ const ViewProject:FC<ViewProjectProps> = ({data}) => {
             direction={"row"}
             justifyContent={"space-between"}
             alignItems={"center"}
+            spacing={1}
             sx={{
               backgroundColor:
                 data.websiteName != undefined
@@ -73,8 +86,17 @@ const ViewProject:FC<ViewProjectProps> = ({data}) => {
               },
             }}
           >
-            {data.code.replace(/^https?:\/\//, "")} &nbsp;
-            <ArrowUpRightIcon />
+            {isExtraSmallScreen ? (
+              <>
+                <Typography>Code</Typography>
+                <CodeIcon style={{fontSize:"1.5rem"}}/>
+              </>
+            ) : (
+              <>
+                {data.code.replace(/^https?:\/\//, "")} &nbsp;
+                <ArrowUpRightIcon />
+              </>
+            )}
           </Stack>
         </Box>
       </Link>
