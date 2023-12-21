@@ -7,7 +7,7 @@ import FilterTag from "./FilterTag";
 import { useState } from "react";
 
 const Projects = () => {
-  const types = findUnique(projects.map((el) => el.type));
+  const types = findUnique(projects.flatMap((el) => el.type));
   const langsRaw = projects.map((el) => el.techUse.langs);
   const langs = findUnique(langsRaw.flatMap((el) => el));
   const frameRaw = projects.map((el) => el.techUse.framework);
@@ -25,8 +25,8 @@ const Projects = () => {
   };
 
   const filteredProjects = projects.filter((el) => {
-    const all = [el.type, ...el.techUse.langs, ...el.techUse.framework];
-    const cutAll = filter.filter((el) => el != "All");
+    const all = [...el.type, ...el.techUse.langs, ...el.techUse.framework];
+    const cutAll = filter.filter((el) => el !== "All");
     return cutAll.every((ml) => all.includes(ml));
   });
 
