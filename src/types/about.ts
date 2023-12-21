@@ -3,5 +3,5 @@ type workExperienceType = {
   position: string;
   desc: string;
   date: string;
-  img: string;
+  img?: string;
 };

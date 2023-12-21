@@ -16,9 +16,10 @@ const ProjectSection = () => {
       />
       {projects.slice(-2).map((item, i) => (
         <Box mb={"1rem"} key={i}>
-          {item.link != undefined ? (
+          {item.view.link != undefined ? (
             <Link
-              to={item.link!}
+              to={item.view.link!}
+              target="_blank"
               style={{ textDecoration: "none", color: theme.palette.text.main }}
             >
               <SmallProjectCard data={item} />
