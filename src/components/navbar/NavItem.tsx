@@ -10,7 +10,25 @@ export interface NavItemProps {
 
 const NavItem: FC<NavItemProps> = ({ to, name }) => {
   const theme = useTheme();
-  return (
+  return name == "Resume" ? (
+    <a
+      href={to}
+      download="Nichakon_Seehabong_Resume"
+      target="_blank"
+      style={{ textDecoration: "none" }}
+    >
+      <Box
+        sx={{
+          fontWeight: "500",
+          padding: "0.5rem 1.25rem",
+          backgroundColor: theme.palette.text.main,
+          color: theme.palette.background.main,
+        }}
+      >
+        {name}
+      </Box>
+    </a>
+  ) : (
     <NavLink
       style={{ textDecoration: "none" }}
       to={to}

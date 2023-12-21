@@ -112,8 +112,6 @@ export const projects: ProjectSectionType[] = [
     desc: "In July 2023, I developed a Shorten URL application, which allows users to create memorable and easy-to-share URLs. During this project, I gained knowledge about MongoDB and learned how to host a website with a proxy using Nginx.",
     view: {
       code: "https://github.com/nichakontae/url-shortner",
-      websiteName: "sv.ivelse.com",
-      link: "https://sv.ivelse.com",
     },
     type: "Web Development",
     techUse: {

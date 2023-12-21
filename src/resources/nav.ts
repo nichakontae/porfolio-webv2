@@ -17,4 +17,8 @@ export const navData: NavbarItem[] = [
     path: "/about",
     name: "About",
   },
+  {
+    path: "./assets/files/Nichakon-Seehabong_resume.pdf",
+    name: "Resume",
+  },
 ];
