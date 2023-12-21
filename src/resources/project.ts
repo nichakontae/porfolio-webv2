@@ -10,7 +10,7 @@ export const projects: ProjectSectionType[] = [
     view: {
       code: "https://github.com/nichakontae/portfolio-web",
     },
-    type: "Web Development",
+    type: ["Web Development"],
     techUse: {
       langs: ["Javascript"],
       framework: ["React"],
@@ -24,7 +24,7 @@ export const projects: ProjectSectionType[] = [
     view: {
       code: "https://github.com/CSSIT22/studentlife",
     },
-    type: "Web Development",
+    type: ["Web Development"],
     techUse: {
       langs: ["Typescript"],
       framework: ["React", "Nodejs", "PostgresSQL"],
@@ -41,7 +41,7 @@ export const projects: ProjectSectionType[] = [
       link: "https://gdsc.sit.kmutt.ac.th/",
       code: "https://github.com/KNattawat89/gdsc-project",
     },
-    type: "Web Development",
+    type: ["Web Development"],
     techUse: {
       langs: ["Typescript", "Go"],
       framework: ["React", "Firebase", "MySQL"],
@@ -55,7 +55,7 @@ export const projects: ProjectSectionType[] = [
     view: {
       code: "https://github.com/KNattawat89/ModDormy",
     },
-    type: "Mobile Development",
+    type: ["Mobile Development"],
     techUse: {
       langs: ["Dart", "Go"],
       framework: ["Flutter", "Firebase", "MySQL"],
@@ -69,7 +69,7 @@ export const projects: ProjectSectionType[] = [
     view: {
       code: "https://github.com/fxhPhxrxchxyx/BackdropSIThackathon2023",
     },
-    type: "Web Development",
+    type: ["Web Development"],
     techUse: {
       langs: ["Typescript"],
       framework: ["React"],
@@ -83,7 +83,7 @@ export const projects: ProjectSectionType[] = [
     view: {
       code: "https://github.com/nichakontae/gift2grow",
     },
-    type: "Mobile Development",
+    type: ["Mobile Development"],
     techUse: {
       langs: ["Dart", "Go"],
       framework: ["Flutter", "Firebase", "MySQL"],
@@ -97,7 +97,7 @@ export const projects: ProjectSectionType[] = [
     view: {
       code: "https://github.com/nichakontae/porfolio-webv2",
     },
-    type: "Web Development",
+    type: ["Web Development"],
     techUse: {
       langs: ["Typescript"],
       framework: ["React"],
@@ -113,12 +113,26 @@ export const projects: ProjectSectionType[] = [
     view: {
       code: "https://github.com/nichakontae/url-shortner",
     },
-    type: "Web Development",
+    type: ["Web Development"],
     techUse: {
       langs: ["Typescript", "Go"],
       framework: ["React", "MongoDB"],
     },
-
+    // don't forgot to change visibility to public
+  },
+  {
+    icon: "./assets/images/proj/tsl-connect-logo.png",
+    projectName: "TSL Connect",
+    preview: "./assets/images/proj/tsl-connect.png",
+    desc: "In December 2023, I developed a Thai Sign Language Detection project that utilizes the YOLO model for the AI component. The project involves web development, employing the Flask framework for the backend and React for the frontend.",
+    view: {
+      code: "https://github.com/nichakontae/TSL-Conenct",
+    },
+    type: ["AI Development", "Web Development"],
+    techUse: {
+      langs: ["Typescript", "Python"],
+      framework: ["React", "Flask", "SocketIO", "YOLOv8"],
+    },
     // don't forgot to change visibility to public
   },
 ];

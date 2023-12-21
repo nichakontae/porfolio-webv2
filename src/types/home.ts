@@ -4,7 +4,7 @@ export type ProjectSectionType = {
   preview: string;
   desc: string;
   view: ViewProjectType;
-  type: string;
+  type: string[];
   techUse: LangFrame;
 };
 

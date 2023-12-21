@@ -5,13 +5,15 @@ import { Stack } from "@mui/material";
 
 interface TechUseProps {
   techUse: LangFrame;
-  type: string;
+  type: string[];
 }
 
 const TechUse: FC<TechUseProps> = ({ techUse, type }) => {
   return (
     <Stack direction={"row"} spacing={1} flexWrap={"wrap"} useFlexGap>
-      <Tag text={type} />
+      {type.map((el) => (
+        <Tag text={el} />
+      ))}
       {techUse.langs.map((el) => (
         <Tag text={el} key={el} />
       ))}
